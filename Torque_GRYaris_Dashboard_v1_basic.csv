@@ -5,11 +5,11 @@
 "Charge Air Cooler Temp","CACT","0x220177","B-40",-40,100,"°C","7DF","","",1,0
 "Engine Oil Pressure","Oil Press","0x221074"," (((A*256)+B) * 10) / 128 ",0,1000,"kPa","700","","",1,0
 "Engine Oil Temp (unconfirmed)","Oil Temp?","0x015C","A-40",-40,215,"°C","","","",1,0
-"Front Left Tire Pressure","FL Press","0x221005","(B/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,0
-"Front Right Tire Pressure","FR Press","0x221005","(D/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,0
-"Rear Left Tire Pressure","RL Press","0x221005","(F/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,0
-"Rear Right Tire Pressure","RR Press","0x221005","(H/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,0
-"Front Left Tire Temp","FL Temp","0x221004","A-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,0
-"Front Right Tire Temp","FR Temp","0x221004","B-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,0
-"Rear Left Tire Temp","RL Temp","0x221004","C-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,0
-"Rear Right Tire Temp","RR Temp","0x221004","D-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,0
+"Front Left Tire Pressure","FL Press","0x221005","(B/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Front Right Tire Pressure","FR Press","0x221005","(D/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Rear Left Tire Pressure","RL Press","0x221005","(F/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Rear Right Tire Pressure","RR Press","0x221005","(H/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Front Left Tire Temp","FL Temp","0x221004","A-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Front Right Tire Temp","FR Temp","0x221004","B-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Rear Left Tire Temp","RL Temp","0x221004","C-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Rear Right Tire Temp","RR Temp","0x221004","D-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
