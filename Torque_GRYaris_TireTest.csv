@@ -1,0 +1,25 @@
+"Name","ShortName","ModeAndPID","Equation","Min Value","Max Value","Units","Header","startDiagnostic","stopDiagnostic","scale","minimumRefreshDelayMillis"
+"Front Left Tire Pressure","FL Press","0x221005","(B/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Front Right Tire Pressure","FR Press","0x221005","(D/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Rear Left Tire Pressure","RL Press","0x221005","(F/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Rear Right Tire Pressure","RR Press","0x221005","(H/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Spare Tire Pressure","Spare Press","0x221005","(J/58)-0.5",0,4,"bar","750","atcea2a\natta2a","atcea",1,500
+"Front Left Tire Temp","FL Temp","0x221004","A-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Front Right Tire Temp","FR Temp","0x221004","B-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Rear Left Tire Temp","RL Temp","0x221004","C-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Rear Right Tire Temp","RR Temp","0x221004","D-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"Spare Tire Temp","Spare Temp","0x221004","E-40",-30,100,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte0","TstP b0","0x221005","(A/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte2","TstP b2","0x221005","(C/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte4","TstP b4","0x221005","(E/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte6","TstP b6","0x221005","(G/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte8","TstP b8","0x221005","(I/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte10","TstP b10","0x221005","(K/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte11","TstP b11","0x221005","(L/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Pressure byte12","TstP b12","0x221005","(M/58)-0.5",-5,5,"bar","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte5","TstT b5","0x221004","F-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte6","TstT b6","0x221004","G-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte7","TstT b7","0x221004","H-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte8","TstT b8","0x221004","I-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte9","TstT b9","0x221004","J-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
+"TEST Temp byte10","TstT b10","0x221004","K-40",-50,215,"°C","750","atcea2a\natta2a","atcea",1,500
