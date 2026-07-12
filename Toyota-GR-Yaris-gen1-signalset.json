@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "vehicle": "Toyota GR Yaris (1st gen, GXPA16, ~2020-2025)",
+    "status": "community best-effort, NOT an official OBDb repo (none exists yet for GR Yaris as of 2026-07)",
+    "sources": [
+      "https://github.com/OBDb/Toyota-GR-Corolla (shared TNGA-B/G16E-GTS platform, most PIDs carried over 1:1)",
+      "https://github.com/2m/gry",
+      "https://2m.lt/blog/reverse-engineering-pids/",
+      "https://www.gr-yaris.co.uk/threads/reverse-engineering-pids.4680/",
+      "https://www.gr-zoo.com/threads/pids-reverse-engineered-revisited.186/"
+    ]
+  },
+  "commands": [
+    { "hdr": "700", "rax": "708", "cmd": {"22": "1059"}, "freq": 0.25, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_ACCEL_PEDAL", "path": "Control", "fmt": { "len": 8, "max": 100, "div": 1.42, "add": -41, "unit": "percent" }, "name": "Accelerator Pedal"}
+      ]},
+    { "hdr": "700", "rax": "708", "cmd": {"22": "1074"}, "freq": 0.25, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_ENG_OIL_PRESS", "path": "Engine", "fmt": { "len": 16, "max": 1000, "mul": 10, "div": 128, "unit": "kilopascal" }, "name": "Engine Oil Pressure"}
+      ]},
+    { "hdr": "700", "rax": "708", "cmd": {"22": "1638"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_CLUTCHPACK_TEMP", "path": "Drivetrain", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "AWD Clutch Pack / Trans Oil Temperature"}
+      ]},
+    { "hdr": "700", "rax": "708", "cmd": {"22": "1F2F"}, "freq": 30, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_FLI", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
+      ]},
+    { "hdr": "700", "rax": "708", "cmd": {"22": "105C"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_KNOCK_CORR", "path": "Engine", "fmt": { "len": 16, "max": 1024, "min": -1024, "div": 32, "add": -32768, "unit": "degrees" }, "name": "Knock Correction Learned Value (crank angle)"},
+        {"id": "GRYARIS_KNOCK_FB",   "path": "Engine", "fmt": { "bix": 16, "len": 16, "max": 1024, "min": -1024, "div": 32, "add": -32768, "unit": "degrees" }, "name": "Knock Feedback Value (crank angle)"}
+      ]},
+    { "hdr": "701", "rax": "709", "cmd": {"22": "1627"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_TF1_PAN", "path": "Engine", "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125, "add": -40, "unit": "fahrenheit" }, "name": "Transmission Fluid Pan Temperature"}
+      ]},
+    { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1628"}, "freq": 1,
+      "signals": [
+        {"id": "GRYARIS_TF2_CONV", "path": "Engine", "fmt": { "len": 16, "max": 350, "min": -40, "mul": 0.00703125, "add": -40, "unit": "fahrenheit" }, "name": "Transmission Fluid Post-Converter Temperature"}
+      ]},
+    { "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "tmo": "96", "fcm1": true, "cmd": {"22": "1004"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_TT_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Front left tire temperature"},
+        {"id": "GRYARIS_TT_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Front right tire temperature"},
+        {"id": "GRYARIS_TT_RL",    "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Rear left tire temperature"},
+        {"id": "GRYARIS_TT_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Rear right tire temperature"},
+        {"id": "GRYARIS_TT_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Spare tire temperature"},
+        {"id": "GRYARIS_TT_TEST40", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte5 temperature"},
+        {"id": "GRYARIS_TT_TEST48", "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte6 temperature"},
+        {"id": "GRYARIS_TT_TEST56", "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte7 temperature"},
+        {"id": "GRYARIS_TT_TEST64", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte8 temperature"},
+        {"id": "GRYARIS_TT_TEST72", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte9 temperature"},
+        {"id": "GRYARIS_TT_TEST80", "path": "Tires", "fmt": {"bix": 80, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TEST byte10 temperature"}
+      ]},
+    { "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "tmo": "96", "fcm1": true, "cmd": {"22": "1005"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_TP_FL",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+        {"id": "GRYARIS_TP_FR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+        {"id": "GRYARIS_TP_RL",    "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+        {"id": "GRYARIS_TP_RR",    "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+        {"id": "GRYARIS_TP_SPARE", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Spare tire pressure"},
+        {"id": "GRYARIS_TP_TEST0",  "path": "Tires", "fmt": {"bix": 0,  "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte0 pressure"},
+        {"id": "GRYARIS_TP_TEST16", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte2 pressure"},
+        {"id": "GRYARIS_TP_TEST32", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte4 pressure"},
+        {"id": "GRYARIS_TP_TEST48", "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte6 pressure"},
+        {"id": "GRYARIS_TP_TEST64", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte8 pressure"},
+        {"id": "GRYARIS_TP_TEST80", "path": "Tires", "fmt": {"bix": 80, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte10 pressure"},
+        {"id": "GRYARIS_TP_TEST88", "path": "Tires", "fmt": {"bix": 88, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte11 pressure"},
+        {"id": "GRYARIS_TP_TEST96", "path": "Tires", "fmt": {"bix": 96, "len": 8, "max": 4, "div": 58, "add": -0.5, "unit": "bars" }, "name": "TEST byte12 pressure"}
+      ]},
+    { "hdr": "750", "rax": "758", "eax": "2A", "tst": "2A", "fcm1": true, "cmd": {"22": "2021"}, "freq": 86400, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_TID_1", "path": "Tires", "name": "Tire 1 position", "fmt": {"len": 8, "map": {
+              "1": { "description": "Front left",  "value": "FL" },
+              "2": { "description": "Front right", "value": "FR" },
+              "3": { "description": "Rear left",   "value": "RL" },
+              "4": { "description": "Rear right",  "value": "RR" }
+            }}
+        },
+        {"id": "GRYARIS_TID_2", "path": "Tires", "name": "Tire 2 position", "fmt": {"bix": 8, "len": 8, "map": {
+              "1": { "description": "Front left",  "value": "FL" },
+              "2": { "description": "Front right", "value": "FR" },
+              "3": { "description": "Rear left",   "value": "RL" },
+              "4": { "description": "Rear right",  "value": "RR" }
+            }}
+        },
+        {"id": "GRYARIS_TID_3", "path": "Tires", "name": "Tire 3 position", "fmt": {"bix": 16, "len": 8, "map": {
+              "1": { "description": "Front left",  "value": "FL" },
+              "2": { "description": "Front right", "value": "FR" },
+              "3": { "description": "Rear left",   "value": "RL" },
+              "4": { "description": "Rear right",  "value": "RR" }
+            }}
+        },
+        {"id": "GRYARIS_TID_4", "path": "Tires", "name": "Tire 4 position", "fmt": {"bix": 24, "len": 8, "map": {
+              "1": { "description": "Front left",  "value": "FL" },
+              "2": { "description": "Front right", "value": "FR" },
+              "3": { "description": "Rear left",   "value": "RL" },
+              "4": { "description": "Rear right",  "value": "RR" }
+            }}
+        }
+      ]},
+    { "hdr": "7B0", "rax": "7B8", "cmd": {"22": "1004"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_BRAKE_MC_PRESSURE", "path": "Brakes", "fmt": { "len": 8, "max": 150, "mul": 0.9807, "add": -10, "unit": "bars" }, "name": "Brake Master Cylinder Pressure"}
+      ]},
+    { "hdr": "7B0", "rax": "7B8", "cmd": {"22": "1006"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_MASTER_CYL_TEMP", "path": "Brakes", "fmt": { "len": 8, "max": 100, "min": -20, "add": -80, "unit": "celsius" }, "name": "Master Cylinder Sensor Temperature"}
+      ]},
+    { "hdr": "7B1", "rax": "7B9", "cmd": {"22": "1026"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_COUPLING_TEMP", "path": "Drivetrain", "fmt": { "len": 16, "max": 100, "min": -20, "div": 128, "unit": "celsius" }, "name": "ITCC / AWD Coupling Temperature"}
+      ]},
+    { "hdr": "7B3", "rax": "7BB", "cmd": {"22": "1004"}, "freq": 0.25, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_STEERING_ANGLE", "path": "Control", "fmt": { "len": 16, "max": 410, "min": -410, "mul": 1.5, "sign": true, "unit": "degrees" }, "name": "Steering Angle"}
+      ]},
+    { "hdr": "7C0", "rax": "7C8", "cmd": {"22": "1021"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_BATTERY_VOLTAGE", "path": "Electrical", "fmt": { "len": 8, "max": 20, "div": 10, "unit": "volts" }, "name": "B+ Battery Voltage"}
+      ]},
+    { "hdr": "7C0", "rax": "7C8", "cmd": {"22": "1141"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_AMBIENT_TEMP", "path": "Environment", "fmt": { "len": 8, "max": 100, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "Ambient Air Temperature"}
+      ]},
+    { "hdr": "7DF", "rax": "7E8", "cmd": {"01": "77"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_CACT", "path": "Engine", "fmt": { "bix": 8, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charge Air Cooler Temperature (standard Mode 01 PID)"}
+      ]},
+    { "hdr": "7DF", "rax": "7E8", "cmd": {"22": "0177"}, "freq": 1, "dbgfilter": { "to": 2025, "from": 2020 },
+      "signals": [
+        {"id": "GRYARIS_IAT_MANIFOLD", "path": "Engine", "fmt": { "bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake Air Temperature at Manifold"}
+      ]},
+    { "hdr": "7D0", "rax": "7D8", "dbg": true, "cmd": {"21": "62"}, "freq": 1,
+      "signals": [
+        {"id": "GRYARIS_PARKING_BRAKE", "path": "Control", "name": "Parking Brake", "fmt": {"len": 8, "map": {
+              "0": { "description": "", "value": "Off" },
+              "2": { "description": "", "value": "On" }
+            }}
+        }
+      ]}
+  ],
+  "_unconfirmed_no_formula_yet": [
+    { "name": "Fuel Input",                         "hdr": "7C0", "cmd": {"22": "1022"}, "note": "formula unknown" },
+    { "name": "Sub Fuel",                           "hdr": "7C0", "cmd": {"22": "1023"}, "note": "formula unknown" },
+    { "name": "Fuel Pressure High/Low",             "hdr": "700", "cmd": {"22": "1F6D"}, "note": "formula unknown" },
+    { "name": "Intake Manifold Absolute Pressure",  "hdr": "700", "cmd": {"22": "1F87"}, "note": "formula unknown" },
+    { "name": "Low Fuel Pressure Sensor",           "hdr": "700", "cmd": {"22": "10CD"}, "note": "formula unknown" },
+    { "name": "ExDID_1BE1",                         "hdr": "700", "cmd": {"22": "1BE1"}, "note": "purpose/formula unknown" },
+    { "name": "ExDID_15F7",                         "hdr": "700", "cmd": {"22": "15F7"}, "note": "purpose/formula unknown" },
+    { "name": "ExDID_1F07",                         "hdr": "700", "cmd": {"22": "1F07"}, "note": "purpose/formula unknown" }
+  ]
+}
